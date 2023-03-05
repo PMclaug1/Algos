@@ -1,4 +1,5 @@
 // Frequency Counter Pattern
+// find if array 2 has the squares of array 1
 
 // naive solution, nested loops O = n^2
 
