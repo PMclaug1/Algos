@@ -6,6 +6,7 @@
 //if the value is too large move the right pointer down
 //if the value does not exist return -1
 
+// binary search big O - Worst/average - O(log n) Best - O(1)
 
 function binarySearch(arr, val) {
     var left = 0;
