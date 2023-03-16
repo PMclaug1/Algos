@@ -2,6 +2,10 @@
 //once you have smaller sorted arrays, merge those arrays with other sorted arrays until you merge all
 //Once array is merged return sorted array
 
+//Big O - O(n log n)
+//O(log n) decompositions and O(n) comparisons per decomposition
+//O(n) space complexity
+
 function merge(arr1, arr2){
     let results = [];
     let i = 0;
