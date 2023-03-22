@@ -95,6 +95,25 @@ class SinglyLinkedList{
         }
         return false;
     }
+    //inserts value at given index
+    insert(index, val){
+        if(index < 0 || index >= this.length) return false;
+        if(index === this.length){
+            this.push(val)
+            return true;
+        }
+        if(index === 0){
+            this.unshift(val)
+            return true;
+        }
+        var newNode = new Node(val);
+        var previous = this.get(index - 1);
+        var temp = previous.next;
+        previous.next = newNode;
+        newNode.next = temp;
+        this.length++;
+        return true;
+    }
 }
 
 var list = new SinglyLinkedList();
@@ -107,5 +126,7 @@ list.shift()
 list.unshift("Test")
 console.log(list.get(2))
 list.set(2, "Update")
+list.insert(1, "Insert")
+list.insert(2, "Insert Again")
 
 console.log(list)
