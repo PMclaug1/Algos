@@ -114,6 +114,46 @@ class SinglyLinkedList{
         this.length++;
         return true;
     }
+    remove(index){
+        if(index < 0 || index >= this.length){
+            return undefined;
+        } 
+        if(index === 0){
+            return this.shift();
+        }
+        if(index === this.length - 1){
+            return this.pop();
+        }
+        var previousNode = this.get(index - 1);
+        var removed = previousNode.next;
+        previousNode.next = removed.next;
+        this.length--;
+        return removed
+    }
+    reverse(){
+        var node = this.head;
+        this.head = this.tail;
+        this.tail = node;
+        var previous = null;
+        var next = null;
+        for(var i = 0; i < this.length; i++){
+            next = node.next;
+            node.next = previous;
+            previous = node;
+            node = next;
+        }
+        return this;
+    }
+    //Prints linked list in an array (verify reverse etc)
+    print(){
+        var arr = [];
+        var current = this.head;
+        while(current){
+            arr.push(current.val)
+            current = current.next
+        }
+        console.log(arr);
+    }
 }
 
 var list = new SinglyLinkedList();
@@ -127,6 +167,7 @@ list.unshift("Test")
 console.log(list.get(2))
 list.set(2, "Update")
 list.insert(1, "Insert")
-list.insert(2, "Insert Again")
-
-console.log(list)
+list.remove(1)
+list.print()
+list.reverse()
+list.print()
