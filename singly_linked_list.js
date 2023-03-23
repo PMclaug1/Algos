@@ -1,3 +1,9 @@
+//Big O SLL
+//Insertion - O(1) / Removal - O(1) (for beginning) or O(n) (for end/others) / Searching - O(n) / Access - O(n)
+//SLL's are good alternative to arrays when insertion/deletion at the beginning is frequently required
+//No built-in index for SLL's
+//Foundation for other structures like stacks and queues.
+
 class Node{
     constructor(val){
         this.val = val;
