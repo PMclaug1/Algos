@@ -40,9 +40,24 @@ class DoublyLinkedList{
         this.length--;
         return poppedNode
     }
+    shift(){
+        if(this.length === 0) return undefined;
+        var oldHead = this.head;
+        if(this.length === 1){
+            this.head = null;
+            this.tail = null;
+        }
+        this.head = oldHead.next;
+        this.head.previous = null;
+        oldHead.next = null;
+        this.length--;
+        return oldHead;
+    }
 }
 
 list = new DoublyLinkedList()
 list.push(5)
+list.push(10)
+list.shift()
 
 console.log(list)
