@@ -89,6 +89,14 @@ class DoublyLinkedList {
         }
         return current;
     }
+    set(index, val) {
+        var foundNode = this.get(index)
+        if (foundNode != null) {
+            foundNode.val = val;
+            return true;
+        }
+        return false;
+    }
 }
 
 list = new DoublyLinkedList()
@@ -98,5 +106,6 @@ list.push(15)
 list.shift()
 list.unshift(85)
 console.log(list.get(2))
+list.set(0,25)
 
 console.log(list)
