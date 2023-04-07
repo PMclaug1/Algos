@@ -1,3 +1,8 @@
+//Big O
+//Insertion & removal - O(1) Searching & access O(n)
+//like singly linked list, but there is an additional pointer to prev nodes
+//Better  for finding nodes(half the time). Takes up more memory due to 2nd pointer
+
 class Node {
     constructor(val) {
         this.val = val;
