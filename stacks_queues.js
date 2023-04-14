@@ -10,6 +10,12 @@
 // stack.pop()
 // console.log(stack)
 
+
+//Big O - Stacks
+//Insertion and removal - O(1)
+//Searching and access O(N) - if this is important, 
+//another data structure would probably be better
+
 class Node {
     constructor(value){
         this.value = value;
