@@ -61,3 +61,52 @@ stack.push(45)
 stack.pop()
 
 console.log(stack)
+
+//Queues
+//Add and remove data. FIFO
+//Big O - Insertion and removal O(1)
+//Searching/Access - O(N)
+
+class Queue {
+    constructor(){
+        this.first = null;
+        this.last = null;
+        this.size = 0;
+    }
+    enqueue(val) {
+        var newNode = new Node(val)
+        if(!this.first){
+            this.first = newNode;
+            this.last = newNode;
+        }
+        else {
+            this.last.next = newNode;
+            this.last = newNode;
+        }
+        return ++this.size;
+    }
+    dequeue(){
+        if(!this.first){
+            return null;
+        }
+        else {
+            var temp = this.first;
+            if(this.first === this.last){
+                this.last = null;
+            }
+            else {
+                this.first = this.first.next;
+                this.size--;
+                return temp.value;
+            }
+        }
+    }
+}
+
+
+var queue = new Queue;
+queue.enqueue(5)
+queue.enqueue(10)
+queue.enqueue(15)
+queue.dequeue()
+console.log(queue)
