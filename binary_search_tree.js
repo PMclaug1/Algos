@@ -1,4 +1,6 @@
-
+// Binary Search Tree Big O
+// Average and Best - Insertion - O(log n) Searching - O(log n)
+// Worst case - 1 sided & 1 branch - O(n) - This would be a bad use case for BST
 
 class Node {
     constructor(value){
